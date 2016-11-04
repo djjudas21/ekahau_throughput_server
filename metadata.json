@@ -1,0 +1,14 @@
+{
+  "name": "jgazeley/ekahau_throughput_server",
+  "version": "0.1.0",
+  "author": "jgazeley",
+  "summary": "Deploy Ekahau Throughput Server on Linux",
+  "license": "Apache-2.0",
+  "source": "https://github.com/djjudas21/puppet-ekahau_throughput_server",
+  "project_page": "https://github.com/djjudas21/puppet-ekahau_throughput_server",
+  "issues_url": "https://github.com/djjudas21/puppet-ekahau_throughput_server/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
