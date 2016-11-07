@@ -8,7 +8,18 @@
   "project_page": "https://github.com/djjudas21/puppet-ekahau_throughput_server",
   "issues_url": "https://github.com/djjudas21/puppet-ekahau_throughput_server/issues",
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+    {
+      "name": "puppetlabs/java",
+      "version_range": ">= 1.0.0"
+    },
+    {
+      "name": "puppetlabs/firewall",
+      "version_range": ">= 1.0.0"
+    },
+    {
+      "name": "maestrodev/wget",
+      "version_range": ">= 1.7.0"
+    }
   ]
 }
 

@@ -42,7 +42,55 @@
 #
 # Copyright 2016 Your name here, unless otherwise noted.
 #
-class ekahau_throughput_server {
+class ekahau_throughput_server (
+  $url = 'http://www.ekahau.com/userData/ekahau/wifi-design/documents/iperf3-ekahau.zip',
+  $tmp = '/tmp',
+  $installdir = '/opt/ekahau_throughput_server',
+) {
+  # Install Java JRE
+  class { '::java':
+    distribution => 'jre',
+  }
+
+  # create install dir
+  file { $installdir:
+    ensure => directory,
+  }
+
+  # fetch zip file
+  wget::fetch { 'iperf3-ekahau.zip':
+    source      => $url,
+    destination => "${installdir}/iperf3-ekahau.zip",
+    timeout     => 0,
+    verbose     => false,
+    notify      => Exec['unzip'],
+    require     => File[$installdir],
+  }
+
+  # unzip it
+  exec { 'unzip':
+    command     => 'unzip iperf3-ekahau.zip',
+    cwd         => $installdir,
+    path        => '/usr/bin',
+    refreshonly => true,
+  }
+
+# start service
+  service { 'ekahau_throughput_server':
+    provider => 'base',
+    path     => $installdir,
+    start    => 'java -cp lib/ekahau-survey.iperf.jar:lib/ekahau-commons.jar:lib/log4j-1.2.17.jar:lib/jackson-annotations-2.3.0.jar:lib/jackson-core-2.3.2.jar:lib/jackson-databind-2.3.2.jar: com.ekahau.iperf.v3.Iperf3Server',
+    require  => Class['java'],
+  }
+
+  # make firewall exception
+  firewall { '100-ekahau-iperf':
+    dport  => '5201',
+    proto  => ['tcp', 'udp'],
+    action => 'accept',
+  }
+
+# selinux rules
 
 
 }
