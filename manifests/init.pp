@@ -42,7 +42,7 @@
 #
 # Copyright 2016 Your name here, unless otherwise noted.
 #
-class ekahau_throughput_server (
+class ekahau_iperf (
   $url = 'http://www.ekahau.com/userData/ekahau/wifi-design/documents/iperf3-ekahau.zip',
   $tmp = '/tmp',
   $installdir = '/opt/ekahau_throughput_server',
