@@ -13,6 +13,10 @@
       "version_range": ">= 1.0.0"
     },
     {
+      "name": "camptocamp/systemd",
+      "version_range": ">= 0.3.0"
+    },
+    {
       "name": "puppetlabs/firewall",
       "version_range": ">= 1.0.0"
     },
