@@ -1,0 +1,8 @@
+[Unit]
+Description=Ekahau Throughput Server
+[Service]
+ExecStart=/usr/bin/java -cp lib/ekahau-survey.iperf.jar:lib/ekahau-commons.jar:lib/log4j-1.2.17.jar:lib/jackson-annotations-2.3.0.jar:lib/jackson-core-2.3.2.jar:lib/jackson-databind-2.3.2.jar: com.ekahau.iperf.v3.Iperf3Server
+Type=simple
+User=root
+[Install]
+WantedBy=multi-user.target

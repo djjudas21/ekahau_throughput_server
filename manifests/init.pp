@@ -75,12 +75,15 @@ class ekahau_iperf (
     refreshonly => true,
   }
 
-# start service
-  service { 'ekahau_throughput_server':
-    provider => 'base',
-    path     => $installdir,
-    start    => 'java -cp lib/ekahau-survey.iperf.jar:lib/ekahau-commons.jar:lib/log4j-1.2.17.jar:lib/jackson-annotations-2.3.0.jar:lib/jackson-core-2.3.2.jar:lib/jackson-databind-2.3.2.jar: com.ekahau.iperf.v3.Iperf3Server',
-    require  => Class['java'],
+  # Configure a systemd unit
+  ::systemd::unit_file { 'ekahauiperf.service':
+    source  => "puppet:///modules/${module_name}/ekahauiperf.service",
+    require => Class['java'],
+  }
+
+  # start service
+  service { 'ekahauiperf':
+    require => Systemd::Unit_file['ekahauiperf'],
   }
 
   # make firewall exception
