@@ -83,7 +83,7 @@ class ekahau_throughput_server (
 
   # start service
   service { 'ekahauiperf':
-    require => Systemd::Unit_file['ekahauiperf'],
+    require => Systemd::Unit_file['ekahauiperf.service'],
   }
 
   # make firewall exception
