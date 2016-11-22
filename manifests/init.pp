@@ -1,7 +1,7 @@
 # Class: ekahau_throughput_server
 # ===========================
 #
-# Full description of class ekahau_throughput_server here.
+# Deploy Ekahau Throughput Server on Linux
 #
 # Parameters
 # ----------
@@ -44,7 +44,6 @@
 #
 class ekahau_throughput_server (
   $url = 'http://www.ekahau.com/userData/ekahau/wifi-design/documents/iperf3-ekahau.zip',
-  $tmp = '/tmp',
   $installdir = '/opt/ekahau_throughput_server',
 ) {
   # Install Java JRE
@@ -83,6 +82,8 @@ class ekahau_throughput_server (
 
   # start service
   service { 'ekahauiperf':
+    ensure  => 'running',
+    enable  => 'true',
     require => Systemd::Unit_file['ekahauiperf.service'],
   }
 
@@ -92,8 +93,4 @@ class ekahau_throughput_server (
     proto  => ['tcp', 'udp'],
     action => 'accept',
   }
-
-# selinux rules
-
-
 }
