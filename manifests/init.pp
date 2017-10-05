@@ -1,6 +1,6 @@
 # Deploy Ekahau Throughput Server on Linux
 class ekahau_throughput_server (
-  $url = 'http://www.ekahau.com/userData/ekahau/wifi-design/documents/iperf3-ekahau.zip',
+  $url = 'http://ekahau.demo.site/wp-content/uploads/2017/02/iperf3-ekahau.zip',
   $installdir = '/opt/ekahau_throughput_server',
 ) {
   # Install Java JRE
