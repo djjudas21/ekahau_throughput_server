@@ -1,6 +1,6 @@
 {
   "name": "jgazeley/ekahau_throughput_server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "jgazeley",
   "summary": "Deploy Ekahau Throughput Server on Linux",
   "license": "Apache-2.0",

@@ -36,6 +36,9 @@ not useful to my employer.
 
 ## Release Notes
 
-### `0.1.0`
+### `0.1.1`
+* Prefer IPv4 listener
+* Update URL to download application
 
-Initial release with not many configurable options.
+### `0.1.0`
+* Initial release with not many configurable options.
