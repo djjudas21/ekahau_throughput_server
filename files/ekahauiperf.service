@@ -2,7 +2,7 @@
 Description=Ekahau Throughput Server
 [Service]
 WorkingDirectory=/opt/ekahau_throughput_server/iperf3-ekahau/
-ExecStart=/usr/bin/java -cp lib/ekahau-survey.iperf.jar:lib/ekahau-commons.jar:lib/log4j-1.2.17.jar:lib/jackson-annotations-2.3.0.jar:lib/jackson-core-2.3.2.jar:lib/jackson-databind-2.3.2.jar: com.ekahau.iperf.v3.Iperf3Server
+ExecStart=/usr/bin/java -Djava.net.preferIPv4Stack=true -cp lib/ekahau-survey.iperf.jar:lib/ekahau-commons.jar:lib/log4j-1.2.17.jar:lib/jackson-annotations-2.3.0.jar:lib/jackson-core-2.3.2.jar:lib/jackson-databind-2.3.2.jar: com.ekahau.iperf.v3.Iperf3Server
 Type=simple
 User=root
 [Install]
