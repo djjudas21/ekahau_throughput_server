@@ -50,6 +50,7 @@ class ekahau_throughput_server (
   # make firewall exception
   firewall { '100-ekahau-iperf':
     dport  => '5201',
+    proto  => ['tcp', 'udp'],
     action => 'accept',
   }
 }
