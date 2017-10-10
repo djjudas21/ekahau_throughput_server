@@ -33,12 +33,3 @@ developed and tested on CentOS 7.
 
 Pull requests welcome. No guarantees of dev effort from me if the features are
 not useful to my employer.
-
-## Release Notes
-
-### `0.1.1`
-* Prefer IPv4 listener
-* Update URL to download application
-
-### `0.1.0`
-* Initial release with not many configurable options.
